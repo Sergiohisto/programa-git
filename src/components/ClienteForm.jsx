@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export const ClienteForm = () => {
   const [cleinte, setCliente] = useState({
@@ -14,6 +15,7 @@ export const ClienteForm = () => {
     fecha_fin_membresia: "",
   });
   const form = useRef(null);
+  const router = useRouter();
 
   const handleChange = (e) => {
     setCliente({
@@ -29,6 +31,7 @@ export const ClienteForm = () => {
     );
     console.log(res);
     form.current.reset();
+    router.push("/clientes");
   };
   return (
     <form
@@ -48,6 +51,7 @@ export const ClienteForm = () => {
         type="text"
         placeholder="nombre"
         onChange={handleChange}
+        autoFocus
       ></input>
 
       <label

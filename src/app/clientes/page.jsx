@@ -1,3 +1,4 @@
+import ClienteCard from "@/components/ClienteCard";
 import axios from "axios";
 
 async function loadClientes() {
@@ -10,12 +11,7 @@ async function clientesPage() {
   return (
     <div className="grid grid-cols-4 gap-4">
       {clientes.map((clientes) => (
-        <div className="bg-white rounded text-blue-600 px-3 py-3" key={clientes.id}>
-          <h1>{clientes.nombre}</h1>
-          <h2>{clientes.apellido}</h2>
-          <h3>{clientes.fecha_registro}</h3>
-          <p>{clientes.membresia_tipo}</p>
-        </div>
+       <ClienteCard clientes={clientes} key={clientes.id}/>
       ))}
     </div>
   );
