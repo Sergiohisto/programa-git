@@ -60,7 +60,8 @@ export async function DELETE(request, props) {
     );
   }
 }
-export async function PUT(request, { params }) {
+export async function PUT(request, props) {
+  const params = await props.params;
   try {
     const data = await request.json();
     const result = await conn.query("UPDATE clientes SET ? WHERE id = ?", [
