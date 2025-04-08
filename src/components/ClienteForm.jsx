@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 
 export const ClienteForm = () => {
   const [cleinte, setCliente] = useState({
@@ -16,6 +16,8 @@ export const ClienteForm = () => {
   });
   const form = useRef(null);
   const router = useRouter();
+  const params = useParams();
+  
 
   const handleChange = (e) => {
     setCliente({

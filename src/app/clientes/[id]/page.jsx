@@ -1,4 +1,5 @@
 import axios from "axios";
+import Button from "./Button";
 
 async function loadCliente(clienteId) {
   const { data } = await axios.get(
@@ -12,12 +13,11 @@ async function Page(props) {
   const cliente = await loadCliente(params.id);
   console.log(cliente);
   return (
-    <section className="flex items-center justify-center">
+    <section className="flex items-center justify-center pt-4">
       <div className="p-6 bg-white text-black">
         <p>nombre: {cliente.nombre}</p>
         <p>apellido: {cliente.apellido}</p>
-
-        <button className="bg-red-400 rounded px-2 py-2">delete</button>
+        <Button clienteId={cliente.id}/>
       </div>
     </section>
   );
