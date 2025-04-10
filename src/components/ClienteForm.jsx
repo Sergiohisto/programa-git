@@ -1,15 +1,15 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter, useParams } from "next/navigation";
 
 export const ClienteForm = () => {
-  const [cleinte, setCliente] = useState({
+  const [cliente, setCliente] = useState({
     nombre: "",
     apellido: "",
     email: "",
     telefono: "",
-    fecha_registro: "DATE",
+    fecha_registro: "",
     membresia_tipo: "",
     fecha_inicio_membresia: "",
     fecha_fin_membresia: "",
@@ -17,23 +17,52 @@ export const ClienteForm = () => {
   const form = useRef(null);
   const router = useRouter();
   const params = useParams();
-  
 
   const handleChange = (e) => {
     setCliente({
-      ...cleinte,
+      ...cliente,
       [e.target.name]: e.target.value,
     });
   };
+
+  useEffect(() => {
+    if (params.id) {
+      axios
+        .get(`http://localhost:3000/api/customers/${params.id}`)
+        .then((res) => {
+          setCliente({
+            nombre: res.data.nombre,
+            apellido: res.data.apellido,
+            email: res.data.email,
+            telefono: res.data.telefono,
+            fecha_registro: res.data.fecha_registro,
+            membresia_tipo: res.data.membresia_tipo,
+            fecha_inicio_membresia: res.data.fecha_inicio_membresia,
+            fecha_fin_membresia: res.data.fecha_fin_membresia,
+          });
+        })
+        .catch((err) =>
+          console.error("Error al obtener datos del cliente:", err)
+        );
+    }
+  }, [params.id]);
+
   const handleSumit = async (e) => {
     e.preventDefault();
-    const res = await axios.post(
-      "http://localhost:3000/api/customers",
-      cleinte
-    );
-    console.log(res);
-    form.current.reset();
-    router.push("/clientes");
+    try {
+      if (params.id) {
+        await axios.put(
+          `http://localhost:3000/api/customers/${params.id}`,
+          cliente
+        );
+      } else {
+        await axios.post("http://localhost:3000/api/customers", cliente);
+      }
+      form.current.reset();
+      router.push("/clientes");
+    } catch (error) {
+      console.error("Error al guardar el cliente:", error);
+    }
   };
   return (
     <form
@@ -52,6 +81,7 @@ export const ClienteForm = () => {
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800"
         type="text"
         placeholder="nombre"
+        value={cliente.nombre}
         onChange={handleChange}
         autoFocus
       ></input>
@@ -67,6 +97,7 @@ export const ClienteForm = () => {
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800"
         type="text"
         placeholder="apellido"
+        value={cliente.apellido}
         onChange={handleChange}
       ></input>
 
@@ -81,6 +112,7 @@ export const ClienteForm = () => {
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800"
         type="text"
         placeholder="email"
+        value={cliente.email}
         onChange={handleChange}
       ></input>
 
@@ -95,6 +127,7 @@ export const ClienteForm = () => {
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800"
         type="text"
         placeholder="telefono"
+        value={cliente.telefono}
         onChange={handleChange}
       ></input>
       <label
@@ -108,6 +141,7 @@ export const ClienteForm = () => {
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800"
         type="text"
         placeholder="membresia_tipo"
+        value={cliente.membresia_tipo}
         onChange={handleChange}
       ></input>
 
@@ -122,6 +156,7 @@ export const ClienteForm = () => {
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800"
         type="text"
         placeholder="fecha registro"
+        value={cliente.fecha_registro}
         onChange={handleChange}
       ></input>
 
@@ -136,6 +171,7 @@ export const ClienteForm = () => {
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800"
         type="text"
         placeholder="fecha_inicio_membresia"
+        value={cliente.fecha_inicio_membresia}
         onChange={handleChange}
       ></input>
 
@@ -150,11 +186,12 @@ export const ClienteForm = () => {
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800"
         type="text"
         placeholder="fecha_fin_membresia"
+        value={cliente.fecha_fin_membresia}
         onChange={handleChange}
       ></input>
 
-      <button className="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded">
-        Crear Cliente
+      <button className="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded mt-4">
+        {params.id ? "Actualizar Cliente" : "Crear Cliente"}
       </button>
     </form>
   );

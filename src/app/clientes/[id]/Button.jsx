@@ -4,6 +4,11 @@ import { useRouter } from "next/navigation";
 
 function Button({ clienteId }) {
   const router = useRouter();
+
+  const handleEdit = () => {
+    router.push(`/clientes/edit/${clienteId}`);
+  };
+
   return (
     <div className="flex items-center justify-center gap-x-2 mt-3">
       <button
@@ -21,7 +26,9 @@ function Button({ clienteId }) {
       >
         Eliminar
       </button>
-      <button className="bg-gray-400 rounded px-2 py-2">Editar</button>
+      <button onClick={handleEdit} className="bg-gray-400 rounded px-2 py-2">
+        Editar
+      </button>
     </div>
   );
 }
