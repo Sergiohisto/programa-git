@@ -4,7 +4,7 @@ import Link from "next/link";
 const links = [
   {
     name: "home",
-    href: "#",
+    href: "/",
   },
   {
     name: "sobre Nosotros",
@@ -12,7 +12,7 @@ const links = [
   },
   {
     name: "Clientes",
-    href: "#",
+    href: "/clientes",
   },
   {
     name: "contacto",

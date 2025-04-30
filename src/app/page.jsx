@@ -1,13 +1,11 @@
 import Header from "@/components/Header";
-import Logo from "@/components/Logo";
-import Menu from "@/components/Menu";
+import Hero from "@/components/Hero";
 
 const page = () => {
   return (
     <section className="">
       <Header />
-      <Menu />
-      <Logo />
+      <Hero />
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import ClienteCard from "@/components/ClienteCard";
+import Header from "@/components/Header";
 import axios from "axios";
 
 async function loadClientes() {
@@ -9,11 +10,16 @@ async function loadClientes() {
 async function clientesPage() {
   const clientes = await loadClientes();
   return (
-    <div className="grid grid-cols-4 gap-4">
-      {clientes.map((clientes) => (
-       <ClienteCard clientes={clientes} key={clientes.id}/>
-      ))}
-    </div>
+    <section>
+      <Header />
+      <div className="py-10 px-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-3 gap-4">
+          {clientes.map((clientes) => (
+            <ClienteCard clientes={clientes} key={clientes.id} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
