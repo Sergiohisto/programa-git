@@ -2,6 +2,7 @@
 import { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter, useParams } from "next/navigation";
+import Header from "./Header";
 
 export const ClienteForm = () => {
   const [cliente, setCliente] = useState({
@@ -37,8 +38,10 @@ export const ClienteForm = () => {
             telefono: res.data.telefono || "",
             fecha_registro: res.data.fecha_registro?.slice(0, 10) || "",
             membresia_tipo: res.data.membresia_tipo || "",
-            fecha_inicio_membresia: res.data.fecha_inicio_membresia?.slice(0, 10) || "",
-            fecha_fin_membresia: res.data.fecha_fin_membresia?.slice(0, 10) || "",
+            fecha_inicio_membresia:
+              res.data.fecha_inicio_membresia?.slice(0, 10) || "",
+            fecha_fin_membresia:
+              res.data.fecha_fin_membresia?.slice(0, 10) || "",
           });
         })
         .catch((err) =>
@@ -69,7 +72,10 @@ export const ClienteForm = () => {
       onSubmit={handleSumit}
       className="bg-white shadow-md rounded-md px-8 pt-6 pb-8 mb-4"
     >
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="nombre"
+      >
         Nombre del cliente
       </label>
       <input
@@ -82,7 +88,10 @@ export const ClienteForm = () => {
         autoFocus
       />
 
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="apellido">
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="apellido"
+      >
         Apellido del cliente
       </label>
       <input
@@ -94,7 +103,10 @@ export const ClienteForm = () => {
         onChange={handleChange}
       />
 
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="email"
+      >
         Correo del cliente
       </label>
       <input
@@ -106,7 +118,10 @@ export const ClienteForm = () => {
         onChange={handleChange}
       />
 
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="telefono">
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="telefono"
+      >
         Teléfono del cliente
       </label>
       <input
@@ -118,7 +133,10 @@ export const ClienteForm = () => {
         onChange={handleChange}
       />
 
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="membresia_tipo">
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="membresia_tipo"
+      >
         Tipo de membresía del cliente
       </label>
       <input
@@ -130,7 +148,10 @@ export const ClienteForm = () => {
         onChange={handleChange}
       />
 
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fecha_registro">
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="fecha_registro"
+      >
         Fecha de registro
       </label>
       <input
@@ -141,7 +162,10 @@ export const ClienteForm = () => {
         onChange={handleChange}
       />
 
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fecha_inicio_membresia">
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="fecha_inicio_membresia"
+      >
         Fecha de inicio de membresía
       </label>
       <input
@@ -152,7 +176,10 @@ export const ClienteForm = () => {
         onChange={handleChange}
       />
 
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fecha_fin_membresia">
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="fecha_fin_membresia"
+      >
         Fecha de fin de membresía
       </label>
       <input
@@ -163,7 +190,7 @@ export const ClienteForm = () => {
         onChange={handleChange}
       />
 
-      <button className="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded mt-4">
+      <button className="bg-green-600 hover:bg-green-400 text-white text-center font-bold py-2 px-4 rounded mt-4">
         {params.id ? "Actualizar Cliente" : "Crear Cliente"}
       </button>
     </form>

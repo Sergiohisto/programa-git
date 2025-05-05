@@ -11,9 +11,9 @@ async function clientesPage() {
   const clientes = await loadClientes();
   return (
     <section>
-      <Header />
-      <div className="py-10 px-8 max-w-3xl mx-auto">
-        <div className="grid grid-cols-3 gap-4">
+      <Header/>
+      <div className="py-28 px-6 max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
           {clientes.map((clientes) => (
             <ClienteCard clientes={clientes} key={clientes.id} />
           ))}

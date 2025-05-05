@@ -4,7 +4,7 @@ import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <header className="w-full py-8 xl:py-[25px] z-30">
+    <header className="w-full py-8 xl:py-[20px] bg-primary fixed z-30">
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row items-center gap-4 lg:justify-between">
           <Logo />
@@ -12,7 +12,7 @@ const Header = () => {
             <Nav
               ontainerStyles="hidden xl:flex"
               listStyles="flex gap-4"
-              linkStyles="text-primary font-primary text-lg tracking-[1.4px]transition-all duration-300"
+              linkStyles="text-black text-lg tracking-[1.4px]transition-all duration-300"
             />
           </div>
         </div>

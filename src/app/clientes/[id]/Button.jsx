@@ -10,7 +10,7 @@ function Button({ clienteId }) {
   };
 
   return (
-    <div className="flex items-center justify-center gap-x-2 mt-3">
+    <div className="flex items-center justify-center gap-x-2 mt-10">
       <button
         className="bg-red-400 rounded px-2 py-2"
         onClick={async () => {
