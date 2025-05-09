@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className=" min-h-screen py-8">
+    <section className=" max-h-full py-8">
       <div className="grid grid-cols-2 grid-rows-2 gap-2 max-w-2xl mx-auto pt-20">
-        <div className="col-span-2 aspect-video rounded-2xl text-center">
+        <div className="col-span-2 aspect-video rounded-2xl text-center shadow-xl">
           <img src="/logo.webp" alt="logo" className=" object-cover w-full rounded-2xl">
           </img>
         </div>
