@@ -3,20 +3,32 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className=" max-h-full py-8">
-      <div className="grid grid-cols-2 grid-rows-2 gap-2 max-w-2xl mx-auto pt-20">
-        <div className="col-span-2 aspect-video rounded-2xl text-center shadow-xl">
-          <img src="/logo.webp" alt="logo" className=" object-cover w-full rounded-2xl">
-          </img>
-        </div>
-        <div className="row-start-2 h-16 bg-green-600 hover:bg-green-400 rounded-2xl px-4 py-6 text-center">
-          <Link className="px-20 py-6" href="/new">
-            CREAR CLIENTE
+    <section
+      className="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12
+    md:pb-24"
+    >
+      <div className="py-6 md:order-1 md:block">
+        <img src="/logo.webp" alt="logo" width="500px" height="500px" />
+      </div>
+      <div className=" mx-8">
+        <h1 class="text-4xl text-center lg:text-4xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter text-green-700">
+          Creación de datos y seguimientos de clientes
+        </h1>
+        <p className="text-lg mt-4 text-center text-slate-600">
+          Plataforma para el seguimiento y gestión de tus clientes.
+        </p>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+          <Link
+            href="/new"
+            className="px-4 py-2 xl:px-5 xl:py-3 border-2 border-black text-center bg-green-300 hover:bg-primary"
+          >
+            Crear Cliente
           </Link>
-        </div>
-        <div className="row-start-2 h-16 bg-blue-400 hover:bg-blue-300 rounded-2xl px-4 py-6 text-center">
-          <Link className="px-10 py-6" href="/clientes">
-            LISTA DE CLIENTE
+          <Link
+            href="/clientes"
+            className="px-4 py-2 xl:px-5 xl:py-3 border-2 border-black text-center hover:bg-green-300"
+          >
+            Lista de Cliente
           </Link>
         </div>
       </div>

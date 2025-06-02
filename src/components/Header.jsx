@@ -4,7 +4,7 @@ import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <header className="w-full py-8 xl:py-[20px] bg-primary fixed z-30">
+    <header className="w-full py-2 xl:py-[12px] bg-primary">
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row items-center gap-4 lg:justify-between">
           <Logo />

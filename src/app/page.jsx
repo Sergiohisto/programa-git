@@ -4,8 +4,10 @@ import Hero from "@/components/Hero";
 
 const page = () => {
   return (
-    <section className="">
-      <Header />
+    <section>
+     <header>
+       <Header />
+     </header>
       <Hero />
       <About />
     </section>
