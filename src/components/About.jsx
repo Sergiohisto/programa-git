@@ -3,7 +3,7 @@ import React from "react";
 
 export const About = () => {
   return (
-    <section className="bg-green-900 ">
+    <section className="bg-green-900">
       <div className="container mx-auto px-4">
         <div className="sm:border-l sm:border-r border-white border-opacity-20 border-dashed">
           <div className="py-32 px-4 sm:px-24">
@@ -21,11 +21,11 @@ export const About = () => {
                     bis_skin_checked="1"
                   >
                     <div
-                      className="bg-gradient-to-b from-green-400 via-green-500 to-darkGreen-900 rounded-full p-px w-6 h-6"
+                      className="bg-gradient-to-b from-green-400 via-green-500 to-green-900 rounded-full p-px w-6 h-6"
                       bis_skin_checked="1"
                     >
                       <div
-                        className="bg-greenSecondary-900 rounded-full p-1"
+                        className="bg-green-800 rounded-full p-1"
                         bis_skin_checked="1"
                       >
                         <p className="text-white text-center text-xs font-semibold">
@@ -47,11 +47,11 @@ export const About = () => {
                     bis_skin_checked="1"
                   >
                     <div
-                      className="bg-gradient-to-b from-green-400 via-green-500 to-darkGreen-900 rounded-full p-px w-6 h-6"
+                      className="bg-gradient-to-b from-green-400 via-green-500 to-green-900 rounded-full p-px w-6 h-6"
                       bis_skin_checked="1"
                     >
                       <div
-                        className="bg-greenSecondary-900 rounded-full p-1"
+                        className="bg-green-800 rounded-full p-1"
                         bis_skin_checked="1"
                       >
                         <p className="text-white text-center text-xs font-semibold">
@@ -73,11 +73,11 @@ export const About = () => {
                     bis_skin_checked="1"
                   >
                     <div
-                      className="bg-gradient-to-b from-green-400 via-green-500 to-darkGreen-900 rounded-full p-px w-6 h-6"
+                      className="bg-gradient-to-b from-green-400 via-green-500 to-green-900 rounded-full p-px w-6 h-6"
                       bis_skin_checked="1"
                     >
                       <div
-                        className="bg-greenSecondary-900 rounded-full p-1"
+                        className="bg-green-800 rounded-full p-1"
                         bis_skin_checked="1"
                       >
                         <p className="text-white text-center text-xs font-semibold">
@@ -86,7 +86,7 @@ export const About = () => {
                       </div>
                     </div>
                     <p className="text-white text-lg font-semibold">
-                      Control de paquetes de membresias.
+                      Control de paquetes.
                     </p>
                   </div>
                   <p className="text-white text-opacity-70 max-w-xs">
@@ -95,7 +95,7 @@ export const About = () => {
                 </div>
               </div>
               <div className="w-full lg:w-2/3 p-4">
-                <img src="/logo.webp" alt="logo" width="500px" height="500px" className="rounded-3xl w-full object-cover"/>
+                <img src="/image.webp" alt="logo" width="500px" height="500px" className="rounded-3xl w-full object-cover"/>
               </div>
             </div>
           </div>

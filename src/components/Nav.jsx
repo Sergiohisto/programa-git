@@ -3,11 +3,11 @@ import Link from "next/link";
 
 const links = [
   {
-    name: "home",
+    name: "Inicio",
     href: "/",
   },
   {
-    name: "sobre Nosotros",
+    name: "Sobre Nosotros",
     href: "#",
   },
   {
@@ -15,7 +15,7 @@ const links = [
     href: "/clientes",
   },
   {
-    name: "contacto",
+    name: "Contacto",
     href: "#",
   },
 ];
@@ -25,7 +25,10 @@ const Nav = ({ containerStyles, linkStyles, listStyles }) => {
     <nav className={containerStyles}>
       <ul className={listStyles}>
         {links.map((link, index) => (
-          <lu key={index}>
+          <lu
+            key={index}
+            className="hover:bg-white hover:bg-opacity-30 transition duration-200 px-3 py-2 rounded-full"
+          >
             <Link href={link.href} className={linkStyles}>
               {link.name}
             </Link>
